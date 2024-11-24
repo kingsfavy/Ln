@@ -1,0 +1,166 @@
+/* THIS PARTICULAR LINES OF CODE IS TO AVOID DEFAULT PADDING AND MARGIN MADE BY THE BROWSER*/
+
+*{
+padding:0;
+margin:0;
+}
+
+/*~~~~*/
+
+body{
+width:100%;
+height:100vh;
+position:relative;
+z-index:0;
+font-family:arial, helvetica;
+}
+
+/*APPLYING POSITIONING BOTH IN BODY AND TWO DIVS CALLED FIRST-BOX AND SECOND-BOX*/
+
+.first-box, .second-box{
+position:absolute;
+z-index:1;
+width:100px;
+height:100px;
+box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+border-none;
+}
+
+
+.first-box{
+background:orange;
+/*try changing the background to any color of your chouse*/
+top:0;
+left:20px;
+border-radius:0 0 10px 10px;
+transform:translate(-20ox);
+}
+
+.second-box{
+background:indigo;
+bottom:0;
+right:20px;
+border-radius:10px 10px 0 0;
+transform:translate(-20ox);
+}
+
+
+/*APPLYING FLEXBOX TO DIFFERENT CLASS NAMES*/
+
+.mobile-view, .desktop-view, .container{
+align-items:center;
+height:100vh;
+justify-content:center;
+flex-wrap:wrap;
+display:none;
+}
+
+.mobile-view, .desktop-view{
+width:90%;
+}
+
+.container{
+width:100%;
+}
+
+/*~~~~*/
+
+/*TO STYLE AN ELEMENT BU IT TAG NAME*/
+
+h2, p{
+z-index:30;
+position:relative;
+}
+
+span{
+font-weight:600;
+}
+
+h2{
+text-shadow: 0 3px 3px rgba(0, 0, 0, 0.22);
+}
+
+p{
+font-weight:lighter;
+}
+
+/*~~~~*/
+
+.first-letter{
+font-size:1.9em;
+font-weight:lighter;
+}
+
+
+/*TO CALL A DIV THROUGH ID THROUGH THE  "#" "*/
+
+#heading{
+animation:views  alternate 2s ease 0.5s both;
+}
+
+#sub{
+animation:views  alternate 2s ease 0.9s both;
+}
+
+/*~~~~~~*/
+
+
+main{
+padding:0 20px;
+}
+
+
+
+/*MEDIA QUERY CODE*/
+
+@media (max-width:768px){
+.mobile-view, .container{
+display:flex;
+background:cyan;
+}
+
+.first-letter{
+background: 
+linear-gradient(to right, orange, indigo); -webkit-background-clip: text; 
+color: transparent;
+}
+}
+
+@media (min-width:768px){
+.desktop-view, .container{
+display:flex;
+background:powderblue;
+}
+
+.first-box{
+background:white;
+}
+
+.second-box{
+background:black;
+}
+
+.first-letter{
+background: 
+linear-gradient(to right, black, white); -webkit-background-clip: text; 
+color: transparent;
+}
+}
+
+/*~~~*/
+
+
+/*ANIMATION CODE*/
+
+@keyframes views{
+0%{
+transform:translateY(0px);
+opacity:0;
+}
+100%{
+transform:translateY(-10px);
+opacity:1;
+}
+}
+
+/*~~~~~*/
